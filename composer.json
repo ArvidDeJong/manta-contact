@@ -1,0 +1,57 @@
+{
+    "name": "darvis/manta-contact",
+    "description": "Contactform module for Manta CMS",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Darvis",
+            "email": "info@arvid.nl"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "illuminate/support": "^12.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^9.0",
+        "phpunit/phpunit": "^10.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Darvis\\MantaContact\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Darvis\\MantaContact\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "post-autoload-dump": [
+            "@php artisan package:discover --ansi"
+        ],
+        "post-install-cmd": [
+            "@install-manta-contact"
+        ],
+        "post-update-cmd": [
+            "@install-manta-contact"
+        ],
+        "install-manta-contact": [
+            "@php artisan manta-contact:install --migrate --no-interaction"
+        ]
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Darvis\\MantaContact\\ContactServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "config": {
+        "sort-packages": true
+    },
+    "version": "0.1.0"
+}
