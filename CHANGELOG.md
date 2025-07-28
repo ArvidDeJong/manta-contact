@@ -5,6 +5,25 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.1] - 2025-07-28
+
+### Changed
+
+- **Documentation Improvements** - Complete reorganization and translation of documentation
+  - Translated all Markdown files from Dutch to English
+  - Corrected module description from "Village of the Year" to contact form management
+  - Restructured README.md to be more concise with references to detailed docs
+  - Created comprehensive `/docs` directory with structured documentation:
+    - `installation.md` - Complete installation guide
+    - `configuration.md` - Configuration options and settings
+    - `usage.md` - Usage guide with examples
+    - `database.md` - Detailed database schema documentation (47 fields)
+    - `troubleshooting.md` - Common issues and solutions
+    - `api.md` - API documentation and programmatic usage
+  - Updated database schema documentation to match actual migration fields
+  - Enhanced troubleshooting section with practical solutions
+  - Improved code examples and usage instructions
+
 ## [0.1.0] - 2025-01-27
 
 ### Added
