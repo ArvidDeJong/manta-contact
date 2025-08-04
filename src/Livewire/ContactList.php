@@ -8,8 +8,8 @@ use Livewire\WithPagination;
 use Manta\FluxCMS\Traits\MantaTrait;
 use Manta\FluxCMS\Traits\SortableTrait;
 use Manta\FluxCMS\Traits\WithSortingTrait;
-use Livewire\Attributes\Layout;
 use Darvis\MantaContact\Traits\ContactTrait;
+use Livewire\Attributes\Layout;
 
 #[Layout('manta-cms::layouts.app')]
 class ContactList extends Component
