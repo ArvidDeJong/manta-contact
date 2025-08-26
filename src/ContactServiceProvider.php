@@ -53,6 +53,7 @@ class ContactServiceProvider extends ServiceProvider
         if ($this->app->runningInConsole()) {
             $this->commands([
                 \Darvis\MantaContact\Console\Commands\InstallCommand::class,
+                \Darvis\MantaContact\Console\Commands\SeedContactCommand::class,
             ]);
         }
 

@@ -6,6 +6,7 @@ use Darvis\MantaContact\Models\Contact;
 use Illuminate\Contracts\Database\Eloquent\Builder;
 use Livewire\Attributes\Locked;
 use Manta\FluxCMS\Models\MantaModule;
+use Manta\FluxCMS\Services\ModuleSettingsService;
 
 trait ContactTrait
 {
@@ -13,15 +14,22 @@ trait ContactTrait
 
     public function __construct()
     {
-        $this->route_name = 'contact';
-        $this->route_list = route($this->route_name . '.list');
+        $this->module_routes = [
+            'name' => 'contact',
+            'list' => 'contact.list',
+            'create' => 'contact.create',
+            'update' => 'contact.update',
+            'read' => 'contact.read',
+            'upload' => 'contact.upload',
+            'settings' => 'contact.settings',
+            'maps' => null,
+        ];
 
-        $settings = MantaModule::where('name', 'contact')->first()->toArray();
-
+        $settings = ModuleSettingsService::ensureModuleSettings('contact', "darvis/manta-contact");
         $this->config = $settings;
 
-        $this->fields = $settings['fields'];
-        $this->tab_title = isset($settings['tab_title']) ? $settings['tab_title'] : null;
+        $this->fields = $settings['fields'] ?? [];
+        $this->tab_title = $settings['tab_title'] ?? null;
         $this->moduleClass = 'Darvis\MantaContact\Models\Contact';
     }
 

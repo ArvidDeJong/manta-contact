@@ -1,6 +1,6 @@
 <flux:main container>
     <x-manta.breadcrumb :$breadcrumb />
-    <div class="flex mt-4">
+    <div class="mt-4 flex">
         <div class="flex-grow">
             {{-- <x-manta.buttons.large type="add" :href="route($this->route_name . '.create')" /> --}}
 
@@ -70,7 +70,7 @@
                     @endif
                     <flux:table.cell>
 
-                        <flux:button size="sm" href="{{ route($this->route_name . '.read', $item) }}"
+                        <flux:button size="sm" href="{{ route($this->module_routes['read'], $item) }}"
                             icon="eye" />
                     </flux:table.cell>
                 </flux:table.row>

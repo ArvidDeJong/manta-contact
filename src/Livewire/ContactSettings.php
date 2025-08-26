@@ -19,18 +19,11 @@ class ContactSettings extends Component
     public array $settings = [];
     public array $emailcodes = [];
 
-    public function mount(Request $request)
+    public function mount()
     {
 
-        $this->getBreadcrumb('settings');
-
-        $this->locale = getLocaleManta();
-        if ($request->input('locale')) {
-            $this->locale = $request->input('locale');
-        }
         $this->getSettings();
-
-        $this->getTablistSettings();
+        $this->getBreadcrumb('settings');
 
         $this->settings = $this->config['settings'];
     }

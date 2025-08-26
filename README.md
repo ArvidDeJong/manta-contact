@@ -17,6 +17,10 @@ composer require darvis/manta-contact
 php artisan manta-contact:install
 ```
 
+```bash
+php artisan manta-contact:seed --with-navigation --force
+```
+
 ### Basic Usage
 
 ```php
