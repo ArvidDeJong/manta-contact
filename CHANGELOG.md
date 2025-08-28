@@ -5,6 +5,40 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.1] - 2025-08-28
+
+### Changed
+
+- **Package Structure Reorganization** - Major changes to package structure
+  - Namespace updated from `Darvis\Mantacontact` to `Darvis\MantaContact` for consistency
+  - Database table renamed from `manta_contact_form_submissions` to `manta_contacts`
+  - Model name changed from `ContactFormSubmission` to `Contact`
+  - Configuration file renamed from `contact.php` to `manta-contact.php`
+
+- **Model Improvements** - Enhancements to the Contact model
+  - Extended fillable fields for better contact data storage
+  - Added address_nr field for house numbers
+  - New option fields (option_1 through option_8) for flexibility
+  - Improved data casting with array support
+  - Added sendmail() method for email functionality
+
+- **Configuration Updates** - Configuration improvements
+  - Dutch comments added for better documentation
+  - Route prefix updated to 'cms/contact'
+  - Email configuration extended with default settings
+  - UI settings added for pagination and breadcrumbs
+
+- **Route Structure** - Route improvements
+  - Dutch route names (toevoegen, aanpassen, lezen, bestanden, instellingen)
+  - Improved middleware configuration
+  - Consistent naming with config prefix
+
+### Fixed
+
+- **Database Schema** - Database consistency improvements
+  - Table name now consistent with model configuration
+  - Improved field mapping between model and database
+
 ## [0.1.1] - 2025-07-28
 
 ### Changed

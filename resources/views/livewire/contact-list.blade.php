@@ -2,10 +2,10 @@
     <x-manta.breadcrumb :$breadcrumb />
     <div class="mt-4 flex">
         <div class="flex-grow">
-            {{-- <x-manta.buttons.large type="add" :href="route($this->route_name . '.create')" /> --}}
+            {{-- <x-manta.buttons.large type="add" :href="route($this->module_routes['create'])" /> --}}
 
             @if (isset($config['settings']) && count($config['settings']) > 0)
-                <x-manta.buttons.large type="gear" :href="route($this->route_name . '.settings')" />
+                <x-manta.buttons.large type="gear" :href="route($this->module_routes['settings'])" />
             @endif
 
         </div>
