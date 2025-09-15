@@ -15,8 +15,6 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->softDeletes();
-            
-            // CMS tracking fields
             $table->string('created_by')->nullable();
             $table->string('updated_by')->nullable();
             $table->string('deleted_by')->nullable();
@@ -24,11 +22,9 @@ return new class extends Migration
             $table->string('host')->nullable();
             $table->integer('pid')->nullable();
             $table->string('locale')->nullable();
-            
-            // Status fields
             $table->boolean('active')->default(true);
             $table->integer('sort')->default(1);
-            
+
             // Contact information
             $table->string('company')->nullable();
             $table->string('title')->nullable();
@@ -38,7 +34,7 @@ return new class extends Migration
             $table->string('name')->nullable();
             $table->string('email')->nullable();
             $table->string('phone')->nullable();
-            
+
             // Address information
             $table->string('address')->nullable();
             $table->string('address_nr')->nullable();
@@ -46,20 +42,20 @@ return new class extends Migration
             $table->string('city')->nullable();
             $table->string('country')->nullable();
             $table->date('birthdate')->nullable();
-            
+
             // Communication preferences
             $table->boolean('newsletters')->nullable();
-            
+
             // Message content
             $table->string('subject')->nullable();
             $table->text('comment')->nullable();
             $table->string('internal_contact')->nullable();
             $table->string('ip')->nullable();
-            
+
             // Additional comments
             $table->text('comment_client')->nullable();
             $table->text('comment_internal')->nullable();
-            
+
             // Flexible option fields
             $table->text('option_1')->nullable();
             $table->text('option_2')->nullable();
@@ -69,7 +65,7 @@ return new class extends Migration
             $table->text('option_6')->nullable();
             $table->text('option_7')->nullable();
             $table->text('option_8')->nullable();
-            
+
             // System fields
             $table->string('administration')->nullable()->comment('Administration column');
             $table->string('identifier')->nullable()->comment('Identifier column');
